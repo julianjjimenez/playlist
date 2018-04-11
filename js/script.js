@@ -56,7 +56,7 @@ $(document).ready(function() {
 			imageUrl: "./pickitup.png",
 		},
 		{
-			title: "After The Storm (feat. Tyler, The Creator & Bootsy",
+			title: "After The Storm (feat. Tyler, The Creator & Bootsy Coll",
 			artist: "Tyler, The Creator, Bootsy Collins, Kali Uchis",
 			mp3Ul: "www.youtube.com/watch?v=oskq36AaIS4",
 			imageUrl: "./afterthestorm.jpg",
@@ -68,27 +68,44 @@ $(document).ready(function() {
 
 
 
-	for ( var i=0; i<myPlaylist.length; i=i+1) {
-		$("#songs").append("<h3>" + myPlaylist[i].title + "</h3>" + "<p>" + myPlaylist[i].artist + "</p>" + "<a href=" + myPlaylist[i].mp3Url + ">Play Song</a>" + "<img src="+myPlaylist[i].imageUrl+" />" + "<h1>Length in Minutes: " + myPlaylist[i].songLengthMinutes + "</h1>" + "<h1>Length in seconds: " + myPlaylist[i].songLengthSeconds + "</h1>")
-	}
+	
 
-
-});
 
 function displayList() {
 
+for ( var i=0; i<myPlaylist.length; i=i+1) {
+		$("#songs").append("<h3>" + myPlaylist[i].title + "</h3>" + "<p>" + myPlaylist[i].artist + "</p>" + "<a href=" + myPlaylist[i].mp3Url + ">Play Song</a>" + "<img src="+myPlaylist[i].imageUrl+" />" + "<h1>Length in Minutes: " + myPlaylist[i].songLengthMinutes + "</h1>" + "<h1>Length in seconds: " + myPlaylist[i].songLengthSeconds + "</h1>")
+	}
 
 
 }
 
 function clearList() {
 
-
+$("#songs").empty();
 
 }
 
 function addSong() {
-
-
+	var title = $("#title").val();
+	var artist = $("#artist").val();
+	var mp3_url = $("#mp3-url").val();
+	var image_url = $("#image-url").val();
+	var minutes = $("#minutes").val();
+	var seconds = $("#seconds").val();
+	
+	var newSong = {
+		title: title,
+		artist: artist,
+		mp3_url: mp3_url,
+		image_url: image_url,
+		minutes: minutes,
+		seconds: seconds
+	};
+	
+	return newSong;
 
 }
+
+displayList();
+});
