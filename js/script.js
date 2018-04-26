@@ -108,4 +108,12 @@ function addSong() {
 }
 
 displayList();
+
+
+$("#addSong").click(function(){
+  
+});
+
+
+
 });
